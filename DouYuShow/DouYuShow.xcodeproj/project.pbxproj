@@ -11,6 +11,13 @@
 		379F772D1EDD640D00DF2940 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379F772B1EDD640D00DF2940 /* Main.storyboard */; };
 		379F772F1EDD640D00DF2940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379F772E1EDD640D00DF2940 /* Assets.xcassets */; };
 		379F77321EDD640D00DF2940 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379F77301EDD640D00DF2940 /* LaunchScreen.storyboard */; };
+		379F77421EDD6CB500DF2940 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379F77401EDD6CB500DF2940 /* Home.storyboard */; };
+		379F77441EDD6CEC00DF2940 /* Live.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379F77431EDD6CEC00DF2940 /* Live.storyboard */; };
+		379F77471EDD6CFC00DF2940 /* Flow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379F77451EDD6CFC00DF2940 /* Flow.storyboard */; };
+		379F77491EDD6D0C00DF2940 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379F77481EDD6D0C00DF2940 /* Profile.storyboard */; };
+		379F77531EDD740E00DF2940 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379F77501EDD740E00DF2940 /* MainViewController.swift */; };
+		379F77551EDD745C00DF2940 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379F77541EDD745C00DF2940 /* HomeViewController.swift */; };
+		379F77581EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379F77571EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +27,13 @@
 		379F772E1EDD640D00DF2940 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		379F77311EDD640D00DF2940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		379F77331EDD640D00DF2940 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		379F77411EDD6CB500DF2940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouYuShow/Base.lproj/Home.storyboard; sourceTree = SOURCE_ROOT; };
+		379F77431EDD6CEC00DF2940 /* Live.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Live.storyboard; path = ../Main/Live.storyboard; sourceTree = "<group>"; };
+		379F77461EDD6CFC00DF2940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = DouYuShow/Base.lproj/Flow.storyboard; sourceTree = SOURCE_ROOT; };
+		379F77481EDD6D0C00DF2940 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = ../Main/Profile.storyboard; sourceTree = "<group>"; };
+		379F77501EDD740E00DF2940 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		379F77541EDD745C00DF2940 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		379F77571EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIbBarButtonItemExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,7 +68,6 @@
 			children = (
 				379F77391EDD648A00DF2940 /* Classes */,
 				379F77271EDD640D00DF2940 /* AppDelegate.swift */,
-				379F772B1EDD640D00DF2940 /* Main.storyboard */,
 				379F772E1EDD640D00DF2940 /* Assets.xcassets */,
 				379F77301EDD640D00DF2940 /* LaunchScreen.storyboard */,
 				379F77331EDD640D00DF2940 /* Info.plist */,
@@ -78,6 +91,7 @@
 		379F773A1EDD648A00DF2940 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				379F77451EDD6CFC00DF2940 /* Flow.storyboard */,
 			);
 			path = Flow;
 			sourceTree = "<group>";
@@ -85,6 +99,9 @@
 		379F773B1EDD648A00DF2940 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				379F774D1EDD73AC00DF2940 /* Model */,
+				379F774E1EDD73AC00DF2940 /* View */,
+				379F774C1EDD73AC00DF2940 /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -92,6 +109,7 @@
 		379F773C1EDD648A00DF2940 /* Live */ = {
 			isa = PBXGroup;
 			children = (
+				379F77431EDD6CEC00DF2940 /* Live.storyboard */,
 			);
 			path = Live;
 			sourceTree = "<group>";
@@ -99,6 +117,9 @@
 		379F773D1EDD648A00DF2940 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				379F77511EDD740E00DF2940 /* Model */,
+				379F77521EDD740E00DF2940 /* View */,
+				379F774F1EDD740E00DF2940 /* Controller */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -106,6 +127,7 @@
 		379F773E1EDD648A00DF2940 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				379F77481EDD6D0C00DF2940 /* Profile.storyboard */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -113,8 +135,63 @@
 		379F773F1EDD648A00DF2940 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				379F77561EDD7CAB00DF2940 /* Extention */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		379F774C1EDD73AC00DF2940 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				379F77401EDD6CB500DF2940 /* Home.storyboard */,
+				379F77541EDD745C00DF2940 /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		379F774D1EDD73AC00DF2940 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		379F774E1EDD73AC00DF2940 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		379F774F1EDD740E00DF2940 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				379F772B1EDD640D00DF2940 /* Main.storyboard */,
+				379F77501EDD740E00DF2940 /* MainViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		379F77511EDD740E00DF2940 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		379F77521EDD740E00DF2940 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		379F77561EDD7CAB00DF2940 /* Extention */ = {
+			isa = PBXGroup;
+			children = (
+				379F77571EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift */,
+			);
+			path = Extention;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +256,10 @@
 				379F77321EDD640D00DF2940 /* LaunchScreen.storyboard in Resources */,
 				379F772F1EDD640D00DF2940 /* Assets.xcassets in Resources */,
 				379F772D1EDD640D00DF2940 /* Main.storyboard in Resources */,
+				379F77441EDD6CEC00DF2940 /* Live.storyboard in Resources */,
+				379F77471EDD6CFC00DF2940 /* Flow.storyboard in Resources */,
+				379F77491EDD6D0C00DF2940 /* Profile.storyboard in Resources */,
+				379F77421EDD6CB500DF2940 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +271,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				379F77281EDD640D00DF2940 /* AppDelegate.swift in Sources */,
+				379F77531EDD740E00DF2940 /* MainViewController.swift in Sources */,
+				379F77551EDD745C00DF2940 /* HomeViewController.swift in Sources */,
+				379F77581EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +286,7 @@
 				379F772C1EDD640D00DF2940 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ../../..;
 			sourceTree = "<group>";
 		};
 		379F77301EDD640D00DF2940 /* LaunchScreen.storyboard */ = {
@@ -210,6 +295,24 @@
 				379F77311EDD640D00DF2940 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		379F77401EDD6CB500DF2940 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				379F77411EDD6CB500DF2940 /* Base */,
+			);
+			name = Home.storyboard;
+			path = ../../Main;
+			sourceTree = "<group>";
+		};
+		379F77451EDD6CFC00DF2940 /* Flow.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				379F77461EDD6CFC00DF2940 /* Base */,
+			);
+			name = Flow.storyboard;
+			path = ../Main;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -312,7 +415,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DouYuShow/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kkeye.cn.DouYuShow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -326,7 +429,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = DouYuShow/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.kkeye.cn.DouYuShow;
 				PRODUCT_NAME = "$(TARGET_NAME)";

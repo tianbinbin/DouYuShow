@@ -13,13 +13,38 @@ private let kTitleViewH:CGFloat = 40
 
 class HomeViewController: UIViewController {
     
-    private lazy var pageTitleView:PageTitleView = {
+    // 懒加载TitleView
+    private lazy var pageTitleView:PageTitleView = {[weak self] in
     
     let titleFrame = CGRect(x: 0, y: kStatusBarH+kNavgationBarH, width: kSCREENW, height: kTitleViewH)
     let titles = ["推荐","游戏","娱乐","趣玩"]
     let titleView = PageTitleView(frame: titleFrame, titles: titles)
+        titleView.delegate = self
     return titleView
 
+    }()
+    
+    // 懒加载PageContentView
+    fileprivate lazy var pageContentView:PageContentView = {[weak self] in
+        
+        // 1.确定内容的frame
+        let contenHight = kSCREENH - (kStatusBarH+kNavgationBarH+kTitleViewH)
+        let contentframe = CGRect(x: 0, y: kStatusBarH+kNavgationBarH+kTitleViewH, width: kSCREENW, height: contenHight)
+        
+        //2. 确定控制器
+        var childVCS = [UIViewController]()
+        
+        for _ in 0..<4{
+        
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor(r:CGFloat(arc4random_uniform(UInt32(255.0))), g: CGFloat(arc4random_uniform(UInt32(255.0))), b: CGFloat(arc4random_uniform(UInt32(255.0))))
+            childVCS.append(vc)
+        }
+        
+        
+        let pageContentView = PageContentView(frame: contentframe, childVCS: childVCS, parentViewController: self)
+    
+        return pageContentView
     }()
     
     
@@ -34,6 +59,10 @@ class HomeViewController: UIViewController {
         
         //2.添加titleView
         view.addSubview(pageTitleView)
+        
+        //3.添加contentview
+        view.addSubview(pageContentView)
+        pageContentView.backgroundColor = UIColor.orange
     }
 
 }
@@ -72,3 +101,19 @@ extension HomeViewController{
     }
 
 }
+
+
+//mark:遵守PageTitleViewdelegate
+extension HomeViewController:PageTitleViewDelegate{
+
+    func pageTitle(titleView: PageTitleView, selectindex index: Int) {
+        
+        pageContentView.SetCurrentIndex(currentIndex: index)
+    }
+}
+
+
+
+
+
+

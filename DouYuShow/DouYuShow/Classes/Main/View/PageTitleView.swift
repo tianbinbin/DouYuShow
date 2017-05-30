@@ -10,10 +10,19 @@ import UIKit
 
 private let kScrollLineH : CGFloat = 2
 
+//协议代理
+protocol PageTitleViewDelegate:class{
+ 
+    // selectindex index  selectindex 作为外部参数 index 作为内部参数
+    func pageTitle(titleView:PageTitleView,selectindex index:Int)
+}
+
 class PageTitleView: UIView {
 
     // mark: 定义属性
     fileprivate var titles : [String]
+    fileprivate var currentIndex:Int = 0
+    weak var delegate : PageTitleViewDelegate?
     
     // mark: 懒加载属性
     fileprivate lazy var titlelabels:[UILabel] = [UILabel]()
@@ -35,8 +44,6 @@ class PageTitleView: UIView {
         ScrollLine.backgroundColor = UIColor.orange
         return ScrollLine
     }()
-    
-    
     
     // mark: 自定义构造函数
     init(frame: CGRect,titles:[String]) {
@@ -70,6 +77,7 @@ extension PageTitleView {
         
         // 3.设置底线和滚动的滑块
         SetUpBootomlineAndScrollLine()
+        
     }
     
     private func SetUpTitleLabels(){
@@ -93,6 +101,11 @@ extension PageTitleView {
             scrollView.addSubview(label)
             
             titlelabels.append(label)
+            
+            // 2.给lb添加手势
+            label.isUserInteractionEnabled = true
+            let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.titltLabelClick(_:)))
+            label.addGestureRecognizer(tapGes)
         }
     }
 
@@ -115,3 +128,34 @@ extension PageTitleView {
     }
 
 }
+
+extension PageTitleView{
+
+    @objc fileprivate func titltLabelClick(_ tapGes:UITapGestureRecognizer){
+        
+        //1. 获取当前label 的 下标值
+        guard let currentlb = tapGes.view as? UILabel else { return }
+        
+        //2. 获取之前的lb
+        let olderLabel = titlelabels[currentIndex]
+        
+        //3. 保存最新lb的下标值
+        currentIndex = currentlb.tag
+    
+        //4. 切换文字的颜色
+        currentlb.textColor = UIColor.orange
+        olderLabel.textColor = UIColor.darkGray
+        
+        //5. 滚动条的位置发生改变
+        let scrollLinePosition = CGFloat(currentlb.tag) * ScrollLine.frame.width
+        
+        UIView.animate(withDuration: 0.25) {
+            
+           self.ScrollLine.frame.origin.x = scrollLinePosition
+        }
+        
+        //6.通知代理
+        delegate?.pageTitle(titleView: self, selectindex: currentIndex)
+    }
+}
+

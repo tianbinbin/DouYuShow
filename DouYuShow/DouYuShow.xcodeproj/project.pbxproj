@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3763C8781EDDB93500B2F553 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763C8771EDDB93500B2F553 /* PageContentView.swift */; };
+		3763C87A1EDDBB4000B2F553 /* UIColorExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763C8791EDDBB4000B2F553 /* UIColorExtenion.swift */; };
 		379F77281EDD640D00DF2940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379F77271EDD640D00DF2940 /* AppDelegate.swift */; };
 		379F772D1EDD640D00DF2940 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 379F772B1EDD640D00DF2940 /* Main.storyboard */; };
 		379F772F1EDD640D00DF2940 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 379F772E1EDD640D00DF2940 /* Assets.xcassets */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3763C8771EDDB93500B2F553 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
+		3763C8791EDDBB4000B2F553 /* UIColorExtenion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtenion.swift; sourceTree = "<group>"; };
 		379F77241EDD640D00DF2940 /* DouYuShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYuShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		379F77271EDD640D00DF2940 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		379F772C1EDD640D00DF2940 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -187,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				379F77591EDD8AC000DF2940 /* PageTitleView.swift */,
+				3763C8771EDDB93500B2F553 /* PageContentView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +201,7 @@
 			children = (
 				379F77571EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift */,
 				379F775B1EDD8C7200DF2940 /* Common.swift */,
+				3763C8791EDDBB4000B2F553 /* UIColorExtenion.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -279,9 +285,11 @@
 				379F77281EDD640D00DF2940 /* AppDelegate.swift in Sources */,
 				379F77531EDD740E00DF2940 /* MainViewController.swift in Sources */,
 				379F775A1EDD8AC000DF2940 /* PageTitleView.swift in Sources */,
+				3763C8781EDDB93500B2F553 /* PageContentView.swift in Sources */,
 				379F77551EDD745C00DF2940 /* HomeViewController.swift in Sources */,
 				379F775C1EDD8C7200DF2940 /* Common.swift in Sources */,
 				379F77581EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift in Sources */,
+				3763C87A1EDDBB4000B2F553 /* UIColorExtenion.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +472,7 @@
 				379F77381EDD640D00DF2940 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

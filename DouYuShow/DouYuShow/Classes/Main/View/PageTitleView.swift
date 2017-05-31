@@ -8,7 +8,10 @@
 
 import UIKit
 
+
 private let kScrollLineH : CGFloat = 2
+private let kNormalColor : (CGFloat,CGFloat,CGFloat) = (85,85,85)      // 灰色
+private let kSelectColor : (CGFloat,CGFloat,CGFloat) = (255,128,0)     // 橘色
 
 //协议代理
 protocol PageTitleViewDelegate:class{
@@ -53,16 +56,13 @@ class PageTitleView: UIView {
         
         //1.设置UI界面
         SetUPUI()
-        
     }
     
     // 重写 init 构造函数一定要实现这个方法
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
 }
-
 
 extension PageTitleView {
 
@@ -93,7 +93,7 @@ extension PageTitleView {
             label.text = title
             label.tag = index
             label.font = UIFont.systemFont(ofSize: 16)
-            label.textColor = UIColor.darkGray
+            label.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2 )
             label.textAlignment = .center
             
             let labelX:CGFloat = labelW * CGFloat(index)
@@ -121,7 +121,7 @@ extension PageTitleView {
         //2.添加滚动的线
         //2.1 获取第一个lable
         guard let firstlabel = titlelabels.first else { return }
-        firstlabel.textColor = UIColor.orange
+        firstlabel.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
         //2.2 设置ScrollLine的属性
         scrollView.addSubview(ScrollLine)
         ScrollLine.frame = CGRect(x: firstlabel.frame.origin.x, y: frame.height-kScrollLineH, width: firstlabel.frame.width, height: kScrollLineH)
@@ -143,8 +143,8 @@ extension PageTitleView{
         currentIndex = currentlb.tag
     
         //4. 切换文字的颜色
-        currentlb.textColor = UIColor.orange
-        olderLabel.textColor = UIColor.darkGray
+        currentlb.textColor = UIColor(r: kSelectColor.0, g: kSelectColor.1, b: kSelectColor.2)
+        olderLabel.textColor = UIColor(r: kNormalColor.0, g: kNormalColor.1, b: kNormalColor.2 )
         
         //5. 滚动条的位置发生改变
         let scrollLinePosition = CGFloat(currentlb.tag) * ScrollLine.frame.width
@@ -162,10 +162,10 @@ extension PageTitleView{
 // 对外暴漏的方法
 extension PageTitleView{
 
-    func SetTitleViewProgress(progress:CGFloat,currentIndex:Int,targetIndex:Int) {
+    func SetTitleViewProgress(progress:CGFloat,sourceIndex:Int,targetIndex:Int) {
         
         //1.取出对应的sourcelabel/targetlabel
-        let sourcelabel = titlelabels[currentIndex]
+        let sourcelabel = titlelabels[sourceIndex]
         let targetlabel = titlelabels[targetIndex]
         
         //2.处理滑块逻辑
@@ -173,7 +173,12 @@ extension PageTitleView{
        let moveX = moveTotalX * progress
         ScrollLine.frame.origin.x = sourcelabel.frame.origin.x + moveX
         
-        //3.颜色渐变
+        //3.颜色渐变（ 复杂 ） 
+        let colorDelta = (kSelectColor.0-kNormalColor.0,kSelectColor.1-kNormalColor.1,kSelectColor.2-kNormalColor.2)
+        sourcelabel.textColor = UIColor(r: kSelectColor.0 - colorDelta.0 * progress, g: kSelectColor.1 - colorDelta.0 * progress, b: kSelectColor.2 - colorDelta.0 * progress)
+        targetlabel.textColor = UIColor(r: kNormalColor.0 + colorDelta.0 * progress, g: kNormalColor.1 + colorDelta.0 * progress, b: kNormalColor.2 - colorDelta.0 * progress)
+        
+        currentIndex = targetIndex
     }
 
 }

@@ -117,7 +117,7 @@ extension HomeViewController:PageTitleViewDelegate{
 extension HomeViewController:PageContentViewDelegate{
 
     func PageContenView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, TargetIndex: Int) {
-        pageTitleView.SetTitleViewProgress(progress: progress, currentIndex: sourceIndex, targetIndex: TargetIndex)
+        pageTitleView.SetTitleViewProgress(progress: progress, sourceIndex: sourceIndex, targetIndex: TargetIndex)
     }
 }
 

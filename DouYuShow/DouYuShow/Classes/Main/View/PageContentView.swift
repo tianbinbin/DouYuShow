@@ -19,6 +19,7 @@ class PageContentView: UIView {
     // mark: 定义shuxing 
     fileprivate var childVCS:[UIViewController]
     fileprivate var StartOffset:CGFloat = 0
+    fileprivate var IsForbidDelegate:Bool = false
     weak var delegate : PageContentViewDelegate?
     // 这里会造成循环引用 我用了weak 修饰 weak 只能修饰可选类型
     fileprivate weak var parentVC:UIViewController?
@@ -109,11 +110,14 @@ extension PageContentView:UICollectionViewDelegate{
 
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        
+       
+        IsForbidDelegate = false
        StartOffset = scrollView.contentOffset.x
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if IsForbidDelegate { return }
         
         //1.获取需要的数据
         var  progress:CGFloat = 0
@@ -131,7 +135,7 @@ extension PageContentView:UICollectionViewDelegate{
             
             if targetIndex >= childVCS.count {
              
-                targetIndex = childVCS.count
+                targetIndex = childVCS.count-1
             }
             
             //如果完全滑过去
@@ -164,7 +168,10 @@ extension PageContentView{
 
     func SetCurrentIndex(currentIndex:Int){
         
-        // 滚动到
+        // 1. 记录需要禁止直行代理方法
+        IsForbidDelegate = true
+        
+        // 滚动到正确的位置
         UIView.animate(withDuration: 0.25) { 
             
             let offset = CGFloat(currentIndex) * self.colltionView.frame.width

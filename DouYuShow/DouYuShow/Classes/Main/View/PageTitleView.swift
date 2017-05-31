@@ -171,7 +171,9 @@ extension PageTitleView{
         //2.处理滑块逻辑
        let moveTotalX = targetlabel.frame.origin.x - sourcelabel.frame.origin.x
        let moveX = moveTotalX * progress
-        ScrollLine.frame.origin.x = moveX
+        ScrollLine.frame.origin.x = sourcelabel.frame.origin.x + moveX
+        
+        //3.颜色渐变
     }
 
 }

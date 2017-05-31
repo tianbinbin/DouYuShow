@@ -14,7 +14,7 @@ private let kTitleViewH:CGFloat = 40
 class HomeViewController: UIViewController {
     
     // 懒加载TitleView
-    private lazy var pageTitleView:PageTitleView = {[weak self] in
+    fileprivate lazy var pageTitleView:PageTitleView = {[weak self] in
     
     let titleFrame = CGRect(x: 0, y: kStatusBarH+kNavgationBarH, width: kSCREENW, height: kTitleViewH)
     let titles = ["推荐","游戏","娱乐","趣玩"]
@@ -43,6 +43,7 @@ class HomeViewController: UIViewController {
         
         
         let pageContentView = PageContentView(frame: contentframe, childVCS: childVCS, parentViewController: self)
+            pageContentView.delegate = self
     
         return pageContentView
     }()
@@ -112,7 +113,13 @@ extension HomeViewController:PageTitleViewDelegate{
     }
 }
 
+//mark:遵守PageContentViewdelegate
+extension HomeViewController:PageContentViewDelegate{
 
+    func PageContenView(contentView: PageContentView, progress: CGFloat, sourceIndex: Int, TargetIndex: Int) {
+        pageTitleView.SetTitleViewProgress(progress: progress, currentIndex: sourceIndex, targetIndex: TargetIndex)
+    }
+}
 
 
 

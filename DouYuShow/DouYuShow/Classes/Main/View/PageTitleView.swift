@@ -159,3 +159,20 @@ extension PageTitleView{
     }
 }
 
+// 对外暴漏的方法
+extension PageTitleView{
+
+    func SetTitleViewProgress(progress:CGFloat,currentIndex:Int,targetIndex:Int) {
+        
+        //1.取出对应的sourcelabel/targetlabel
+        let sourcelabel = titlelabels[currentIndex]
+        let targetlabel = titlelabels[targetIndex]
+        
+        //2.处理滑块逻辑
+       let moveTotalX = targetlabel.frame.origin.x - sourcelabel.frame.origin.x
+       let moveX = moveTotalX * progress
+        ScrollLine.frame.origin.x = moveX
+    }
+
+}
+

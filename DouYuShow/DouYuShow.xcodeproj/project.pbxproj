@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37233B511EE05B3200E4EE26 /* RecommdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37233B501EE05B3200E4EE26 /* RecommdViewController.swift */; };
 		3763C8781EDDB93500B2F553 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763C8771EDDB93500B2F553 /* PageContentView.swift */; };
 		3763C87A1EDDBB4000B2F553 /* UIColorExtenion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3763C8791EDDBB4000B2F553 /* UIColorExtenion.swift */; };
 		379F77281EDD640D00DF2940 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379F77271EDD640D00DF2940 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37233B501EE05B3200E4EE26 /* RecommdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommdViewController.swift; sourceTree = "<group>"; };
 		3763C8771EDDB93500B2F553 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		3763C8791EDDBB4000B2F553 /* UIColorExtenion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtenion.swift; sourceTree = "<group>"; };
 		379F77241EDD640D00DF2940 /* DouYuShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouYuShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +155,7 @@
 			children = (
 				379F77401EDD6CB500DF2940 /* Home.storyboard */,
 				379F77541EDD745C00DF2940 /* HomeViewController.swift */,
+				37233B501EE05B3200E4EE26 /* RecommdViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -290,6 +293,7 @@
 				379F775C1EDD8C7200DF2940 /* Common.swift in Sources */,
 				379F77581EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift in Sources */,
 				3763C87A1EDDBB4000B2F553 /* UIColorExtenion.swift in Sources */,
+				37233B511EE05B3200E4EE26 /* RecommdViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

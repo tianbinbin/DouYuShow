@@ -31,8 +31,9 @@ class RecommdViewController: UIViewController {
     
        let collectionView = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: layout)
         collectionView.dataSource = self
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier:kNormalCellID)
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
+        collectionView.register(UINib(nibName: "CollectionViewNormalCell", bundle: nil), forCellWithReuseIdentifier: kNormalCellID)
+        collectionView.register(UINib(nibName: "CollectionHeaderReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeaderViewID)
+        collectionView.backgroundColor = UIColor.white
         // 这行的意思让 collectionView 的宽高随着父视图的改变而改变
         collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         
@@ -47,6 +48,9 @@ class RecommdViewController: UIViewController {
         // 设置ui
         setUpUI()
         
+
+
+
     }
 }
 
@@ -73,31 +77,24 @@ extension RecommdViewController:UICollectionViewDataSource{
         
             return 8
         }
-        
         return 4
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
-        
-        cell.backgroundColor = UIColor.white
-        
+
         return cell
-        
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         // 1. 取出headview
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
         
-        headerView.backgroundColor = UIColor.green
-        
+
         return headerView
     }
-
 }
 
 

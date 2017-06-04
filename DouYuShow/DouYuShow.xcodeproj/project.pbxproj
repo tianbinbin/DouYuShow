@@ -31,6 +31,8 @@
 		379F775C1EDD8C7200DF2940 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379F775B1EDD8C7200DF2940 /* Common.swift */; };
 		37DD7A4E1EE40B09007823FB /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD7A4D1EE40B09007823FB /* NetWorkTools.swift */; };
 		37DD7A521EE40F82007823FB /* RecommendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD7A511EE40F82007823FB /* RecommendViewModel.swift */; };
+		37DD7A541EE43A8F007823FB /* NSDateExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD7A531EE43A8F007823FB /* NSDateExtention.swift */; };
+		37DD7A561EE44C6B007823FB /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD7A551EE44C6B007823FB /* AnchorGroup.swift */; };
 		5BC831E6BC20C2739959005C /* Pods_DouYuShow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E033B95EADE92DEF66D8ED /* Pods_DouYuShow.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,7 +62,9 @@
 		379F77591EDD8AC000DF2940 /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		379F775B1EDD8C7200DF2940 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		37DD7A4D1EE40B09007823FB /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
-		37DD7A511EE40F82007823FB /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecommendViewModel.swift; sourceTree = "<group>"; };
+		37DD7A511EE40F82007823FB /* RecommendViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RecommendViewModel.swift; path = ../Model/RecommendViewModel.swift; sourceTree = "<group>"; };
+		37DD7A531EE43A8F007823FB /* NSDateExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtention.swift; sourceTree = "<group>"; };
+		37DD7A551EE44C6B007823FB /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
 		5DC71CF7D98A2FFC5ADD2181 /* Pods-DouYuShow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuShow.release.xcconfig"; path = "Pods/Target Support Files/Pods-DouYuShow/Pods-DouYuShow.release.xcconfig"; sourceTree = "<group>"; };
 		87E033B95EADE92DEF66D8ED /* Pods_DouYuShow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DouYuShow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED5AFAB5CCC60D151E0E2E85 /* Pods-DouYuShow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DouYuShow.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DouYuShow/Pods-DouYuShow.debug.xcconfig"; sourceTree = "<group>"; };
@@ -187,7 +191,6 @@
 		379F774D1EDD73AC00DF2940 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				37DD7A511EE40F82007823FB /* RecommendViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 		379F77511EDD740E00DF2940 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				37DD7A551EE44C6B007823FB /* AnchorGroup.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -237,6 +241,7 @@
 				379F77571EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift */,
 				379F775B1EDD8C7200DF2940 /* Common.swift */,
 				3763C8791EDDBB4000B2F553 /* UIColorExtenion.swift */,
+				37DD7A531EE43A8F007823FB /* NSDateExtention.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -244,6 +249,7 @@
 		37DD7A501EE40F5E007823FB /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				37DD7A511EE40F82007823FB /* RecommendViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -399,6 +405,7 @@
 				379F77531EDD740E00DF2940 /* MainViewController.swift in Sources */,
 				379F775A1EDD8AC000DF2940 /* PageTitleView.swift in Sources */,
 				3763C8781EDDB93500B2F553 /* PageContentView.swift in Sources */,
+				37DD7A561EE44C6B007823FB /* AnchorGroup.swift in Sources */,
 				379F77551EDD745C00DF2940 /* HomeViewController.swift in Sources */,
 				37DD7A4E1EE40B09007823FB /* NetWorkTools.swift in Sources */,
 				376441D81EE1B888009D77B6 /* CollectionViewNormalCell.swift in Sources */,
@@ -407,6 +414,7 @@
 				379F77581EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift in Sources */,
 				3763C87A1EDDBB4000B2F553 /* UIColorExtenion.swift in Sources */,
 				37233B511EE05B3200E4EE26 /* RecommdViewController.swift in Sources */,
+				37DD7A541EE43A8F007823FB /* NSDateExtention.swift in Sources */,
 				3702E2D61EE2E068007A2B79 /* CollectionViewPretyCell.swift in Sources */,
 				37DD7A521EE40F82007823FB /* RecommendViewModel.swift in Sources */,
 			);

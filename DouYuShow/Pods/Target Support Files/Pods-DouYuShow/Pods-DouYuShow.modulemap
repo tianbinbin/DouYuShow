@@ -1,0 +1,6 @@
+framework module Pods_DouYuShow {
+  umbrella header "Pods-DouYuShow-umbrella.h"
+
+  export *
+  module * { export * }
+}

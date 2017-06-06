@@ -16,6 +16,7 @@ class AnchorModel: NSObject {
     var room_name :String = ""            //房间名称
     var nickname :String = ""             //主播名称
     var online:Int = 0                    //在线人数
+    var anchor_city :String = ""          //所在城市
     
     init(dict:[String:Any]) {
         

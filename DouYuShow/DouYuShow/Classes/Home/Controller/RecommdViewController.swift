@@ -74,16 +74,14 @@ extension RecommdViewController{
 extension RecommdViewController:UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 12
+        
+        return RecommedModel.anChorArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if section == 0 {
-        
-            return 8
-        }
-        return 4
+       let group = RecommedModel.anChorArr[section]
+        return group.anchModelArr.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -105,9 +103,11 @@ extension RecommdViewController:UICollectionViewDataSource,UICollectionViewDeleg
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         // 1. 取出headview
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath)
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeaderViewID, for: indexPath) as! CollectionHeaderReusableView
         
-
+        // 2. 取出模型
+        headerView.group = RecommedModel.anChorArr[indexPath.section]
+        
         return headerView
     }
     
@@ -131,7 +131,9 @@ extension RecommdViewController{
 
     fileprivate func LoadData(){
         
-        RecommedModel.requestData()
+        RecommedModel.requestData { 
+            self.collectionView.reloadData()
+        }
     }
 }
 

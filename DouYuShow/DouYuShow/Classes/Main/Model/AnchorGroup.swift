@@ -38,6 +38,12 @@ class AnchorGroup: NSObject {
         setValuesForKeys(dict)
     }
     
+    // 再写一个构造函数
+    override init() {
+        
+    }
+    
+    
     // 因为字典 dict 可能由很多的key 我们需要的只需要这么多 所以要重写这个方法 不然会crash
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
     

@@ -46,39 +46,47 @@
                             <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="66666" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="phO-yZ-amw">
-                        <rect key="frame" x="144" y="10" width="33" height="21"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.38146456866197181" colorSpace="calibratedRGB"/>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3OR-qf-H9g">
+                        <rect key="frame" x="99" y="8" width="80" height="30"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.51614766725352113" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="zaL-Ow-Qy0"/>
+                            <constraint firstAttribute="height" constant="30" id="8Ff-fk-MCM"/>
+                            <constraint firstAttribute="width" constant="80" id="tq1-5f-lkg"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <state key="normal" title="66666">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masktTobounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                         </userDefinedRuntimeAttributes>
-                    </label>
+                    </button>
                 </subviews>
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="3OR-qf-H9g" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="179-oI-SsR"/>
                 <constraint firstAttribute="bottom" secondItem="fWm-9D-anf" secondAttribute="bottom" constant="10" id="AsF-p6-ejn"/>
                 <constraint firstItem="fJc-d6-nKA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="ETy-T8-kae"/>
                 <constraint firstAttribute="trailing" secondItem="tTT-gr-CIV" secondAttribute="trailing" id="EbA-I2-MNE"/>
                 <constraint firstItem="fJc-d6-nKA" firstAttribute="top" secondItem="tTT-gr-CIV" secondAttribute="bottom" constant="5" id="O2g-6x-hwb"/>
                 <constraint firstItem="tTT-gr-CIV" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Qhn-kR-ZfO"/>
                 <constraint firstAttribute="trailing" secondItem="fJc-d6-nKA" secondAttribute="trailing" constant="10" id="XDw-bx-nhz"/>
-                <constraint firstAttribute="trailing" secondItem="phO-yZ-amw" secondAttribute="trailing" constant="10" id="Xn5-Wm-U5e"/>
                 <constraint firstItem="fWm-9D-anf" firstAttribute="top" secondItem="fJc-d6-nKA" secondAttribute="bottom" constant="4" id="asH-nm-10B"/>
                 <constraint firstItem="tTT-gr-CIV" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="bG5-vp-fYO"/>
+                <constraint firstAttribute="trailing" secondItem="3OR-qf-H9g" secondAttribute="trailing" constant="8" id="cKS-5p-mef"/>
                 <constraint firstItem="fWm-9D-anf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="iGf-GG-66h"/>
-                <constraint firstItem="phO-yZ-amw" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="mnr-jl-spv"/>
             </constraints>
             <size key="customSize" width="187" height="212"/>
+            <connections>
+                <outlet property="cityBtn" destination="fWm-9D-anf" id="qOh-Mz-x8a"/>
+                <outlet property="iconImagev" destination="tTT-gr-CIV" id="fcA-Zn-clo"/>
+                <outlet property="nicknamelb" destination="fJc-d6-nKA" id="t4D-3F-v9y"/>
+                <outlet property="onlinBtn" destination="3OR-qf-H9g" id="eX2-1K-yPQ"/>
+            </connections>
             <point key="canvasLocation" x="93.5" y="133"/>
         </collectionViewCell>
     </objects>

@@ -108,6 +108,7 @@
 				379F77391EDD648A00DF2940 /* Classes */,
 				379F77271EDD640D00DF2940 /* AppDelegate.swift */,
 				379F772E1EDD640D00DF2940 /* Assets.xcassets */,
+				379F773E1EDD648A00DF2940 /* Profile */,
 				379F77301EDD640D00DF2940 /* LaunchScreen.storyboard */,
 				379F77331EDD640D00DF2940 /* Info.plist */,
 			);
@@ -121,7 +122,6 @@
 				379F773B1EDD648A00DF2940 /* Home */,
 				379F773C1EDD648A00DF2940 /* Live */,
 				379F773D1EDD648A00DF2940 /* Main */,
-				379F773E1EDD648A00DF2940 /* Profile */,
 				379F773F1EDD648A00DF2940 /* Tools */,
 			);
 			path = Classes;
@@ -169,7 +169,8 @@
 			children = (
 				379F77481EDD6D0C00DF2940 /* Profile.storyboard */,
 			);
-			path = Profile;
+			name = Profile;
+			path = Classes/Profile;
 			sourceTree = "<group>";
 		};
 		379F773F1EDD648A00DF2940 /* Tools */ = {

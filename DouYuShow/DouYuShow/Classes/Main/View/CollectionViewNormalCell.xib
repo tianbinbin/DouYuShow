@@ -70,6 +70,12 @@
                 <constraint firstItem="PRr-YR-LE6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vhp-Aw-9Ns"/>
             </constraints>
             <size key="customSize" width="199" height="121"/>
+            <connections>
+                <outlet property="iconImagev" destination="PRr-YR-LE6" id="O6f-dx-EA1"/>
+                <outlet property="nickname" destination="k0P-WZ-kIc" id="AC0-f2-yNQ"/>
+                <outlet property="onlineBtn" destination="fPe-fb-oFy" id="s9i-yi-KCW"/>
+                <outlet property="roomName" destination="U77-fV-xJC" id="Mlz-f8-1B2"/>
+            </connections>
             <point key="canvasLocation" x="-203.5" y="87.5"/>
         </collectionViewCell>
     </objects>

@@ -86,18 +86,22 @@ extension RecommdViewController:UICollectionViewDataSource,UICollectionViewDeleg
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        var cell:UICollectionViewCell!
+        let group = RecommedModel.anChorArr[indexPath.section]
+        let anchor = group.anchModelArr[indexPath.row]
         
         if indexPath.section == 1{
-        
-              cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath)
+            
+           let  cell = (collectionView.dequeueReusableCell(withReuseIdentifier: kPretyCellID, for: indexPath)) as!CollectionViewPretyCell
+            cell.achor = anchor
+            return cell
         
         }else{
         
-              cell = collectionView.dequeueReusableCell(withReuseIdentifier: kPretyCellID, for: indexPath)
+           let  cell = collectionView.dequeueReusableCell(withReuseIdentifier: kNormalCellID, for: indexPath) as!CollectionViewNormalCell
+             cell.achor = anchor
+            
+             return cell
         }
-        
-        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -121,9 +125,7 @@ extension RecommdViewController:UICollectionViewDataSource,UICollectionViewDeleg
         
             return CGSize(width: kItemW, height: kNormalItemH)
         }
-        
     }
-
 }
 
 // mark: 请求数据、

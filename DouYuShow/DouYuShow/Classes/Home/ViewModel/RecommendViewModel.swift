@@ -12,9 +12,10 @@ class RecommendViewModel {
     
        // 懒加载一个数组 存放 解析过后的模型
        lazy var anChorArr:[AnchorGroup] = [AnchorGroup]()
-    
+       lazy var cycleModel:[CyceleModel] = [CyceleModel]()
        fileprivate lazy var bigDataGroup: AnchorGroup = AnchorGroup()
        fileprivate lazy var pretyGroup: AnchorGroup = AnchorGroup()
+    
 
 }
 
@@ -22,6 +23,7 @@ class RecommendViewModel {
 // 发送网络请求
 extension RecommendViewModel{
 
+    // 请求推荐数据
     func requestData(finishedCallBack:@escaping ()->()){
         
         //0.的定义参数
@@ -148,6 +150,29 @@ extension RecommendViewModel{
             // 经过上面的这两部。self.anChorArr 数据排序就是 1. self.bigDataGroup 2. self.pretyGroup  3.最后的数据
             
             finishedCallBack()
+        }
+    }
+    
+    // 请求轮播数据
+    func requsetCycleData(finisned:@escaping ()->()){
+        
+        NetWorkTools.RequestData(type: .GET, URLString: "http://www.douyutv.com/api/v1/slide/6", parameters: ["version":"2.300"], SuccessCallBack: { (reslut) in
+            
+            //1.首先将reslut 转换成字典类型
+            guard let reslutDict = reslut as? [String:Any] else {return}
+            
+            //2.根据data 的 key 获取数据
+            guard let dataArray = reslutDict["data"] as? [[String:Any]] else {return}
+            
+            //3.数组中都是模型
+            for dict in dataArray{
+            self.cycleModel.append(CyceleModel.init(dict: dict))
+            }
+            
+            finisned()
+            
+        }) { (reslut) in
+            
         }
     }
     

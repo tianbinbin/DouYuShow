@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendCycleView" customModule="DouYuShow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="460" height="235"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="GkS-kw-1Z7">
+                    <rect key="frame" x="0.0" y="0.0" width="460" height="235"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="RqJ-BB-YxF">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="YUs-wP-575"/>
+                        <outlet property="delegate" destination="iN0-l3-epB" id="DPF-Gy-8Rt"/>
+                    </connections>
+                </collectionView>
+                <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="8py-tB-E0V">
+                    <rect key="frame" x="383" y="190" width="39" height="37"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="currentPageIndicatorTintColor" red="0.93150906739999995" green="0.59759286010000001" blue="0.1540996006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="8py-tB-E0V" secondAttribute="bottom" id="7dE-aa-1dn"/>
+                <constraint firstAttribute="bottom" secondItem="GkS-kw-1Z7" secondAttribute="bottom" id="CoU-cc-cRo"/>
+                <constraint firstItem="GkS-kw-1Z7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="KbK-LE-mfO"/>
+                <constraint firstAttribute="trailing" secondItem="8py-tB-E0V" secondAttribute="trailing" constant="10" id="MlP-vX-mJo"/>
+                <constraint firstAttribute="trailing" secondItem="GkS-kw-1Z7" secondAttribute="trailing" id="Tbi-R1-g32"/>
+                <constraint firstItem="GkS-kw-1Z7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="q2q-gh-P8x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="collectionView" destination="GkS-kw-1Z7" id="fTN-Xc-t1q"/>
+                <outlet property="pagecontrollr" destination="8py-tB-E0V" id="wYA-4H-aQ4"/>
+            </connections>
+            <point key="canvasLocation" x="-122" y="-682"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

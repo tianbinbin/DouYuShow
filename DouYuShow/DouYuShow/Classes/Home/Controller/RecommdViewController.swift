@@ -16,6 +16,7 @@ private let kNormalCellID =  "kNormalCellID"
 private let kPretyCellID =  "kPretyCellID"
 private let kHeaderViewH : CGFloat = 50
 private let kHeaderViewID = "kHeaderViewID"
+private let kCycleViewH = kSCREENW * 3/8
 
 
 class RecommdViewController: UIViewController {
@@ -47,6 +48,14 @@ class RecommdViewController: UIViewController {
     
     fileprivate lazy var RecommedModel:RecommendViewModel = RecommendViewModel()
     
+    fileprivate lazy var cycleView:RecommendCycleView = {
+    
+         let cycleView = RecommendCycleView.RecommendCycleViewCustom()
+         cycleView.frame = CGRect(x: 0, y: -kCycleViewH, width: kSCREENW, height: kCycleViewH)
+         cycleView.backgroundColor = UIColor.red
+         return cycleView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -55,8 +64,6 @@ class RecommdViewController: UIViewController {
         
         // 请求数据
         LoadData()
-
-
     }
 }
 
@@ -67,6 +74,12 @@ extension RecommdViewController{
     fileprivate func setUpUI(){
     
         view.addSubview(collectionView)
+        
+        //2. 将 RecommendCycleView 添加到collectionview
+        collectionView.addSubview(cycleView)
+        
+        //3. 设置collectionView 内边距 
+        collectionView.contentInset = UIEdgeInsets(top: kCycleViewH, left: 0, bottom: 0, right: 0)
     }
 }
 
@@ -132,9 +145,18 @@ extension RecommdViewController:UICollectionViewDataSource,UICollectionViewDeleg
 extension RecommdViewController{
 
     fileprivate func LoadData(){
+       
+        //1. 请求推荐数据
+        RecommedModel.requestData { [weak self] in
+            self?.collectionView.reloadData()
+        }
         
-        RecommedModel.requestData { 
-            self.collectionView.reloadData()
+        //2. 请求轮播数据
+        RecommedModel.requsetCycleData { [weak self] in
+            
+            print("数据请求完成")
+            
+            self?.cycleView.cycleModel = self?.RecommedModel.cycleModel
         }
     }
 }

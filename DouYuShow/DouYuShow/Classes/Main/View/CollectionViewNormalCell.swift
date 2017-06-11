@@ -16,7 +16,6 @@ class CollectionViewNormalCell: UICollectionViewCell {
     @IBOutlet weak var iconImagev: UIImageView!
     @IBOutlet weak var roomName: UILabel!
     
-
     // 定义属性
     var achor :AnchorModel?{
     
@@ -42,12 +41,8 @@ class CollectionViewNormalCell: UICollectionViewCell {
             let iconurl = NSURL(string: achor.vertical_src)
             iconImagev.kf.setImage(with: ImageResource.init(downloadURL: iconurl as! URL))
         }
-        
-    
+
     }
-    
-    
-    
     
     override func awakeFromNib() {
        

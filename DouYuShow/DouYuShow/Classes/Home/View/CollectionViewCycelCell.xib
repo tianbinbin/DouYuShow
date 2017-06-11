@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CollectionViewCycelCell" customModule="DouYuShow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="399" height="125"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="399" height="125"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="默认banner图" translatesAutoresizingMaskIntoConstraints="NO" id="KXn-L8-GyS">
+                        <rect key="frame" x="0.0" y="0.0" width="399" height="125"/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kAO-ZS-4bc">
+                        <rect key="frame" x="0.0" y="90" width="399" height="35"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="测试数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxf-XE-ztg">
+                                <rect key="frame" x="15" y="10" width="115" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.55306448063380287" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kxf-XE-ztg" firstAttribute="leading" secondItem="kAO-ZS-4bc" secondAttribute="leading" constant="15" id="77r-De-ySD"/>
+                            <constraint firstItem="kxf-XE-ztg" firstAttribute="centerY" secondItem="kAO-ZS-4bc" secondAttribute="centerY" id="btb-1w-CMU"/>
+                            <constraint firstAttribute="height" constant="35" id="ivz-Go-QNo"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="kAO-ZS-4bc" secondAttribute="trailing" id="G9G-nI-T9a"/>
+                <constraint firstItem="KXn-L8-GyS" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="KPu-a0-Yom"/>
+                <constraint firstItem="KXn-L8-GyS" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ssv-by-Pti"/>
+                <constraint firstItem="kAO-ZS-4bc" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="od8-Zj-Mxv"/>
+                <constraint firstAttribute="bottom" secondItem="kAO-ZS-4bc" secondAttribute="bottom" id="w6Y-da-ZcR"/>
+                <constraint firstAttribute="bottom" secondItem="KXn-L8-GyS" secondAttribute="bottom" id="wC9-qP-XmS"/>
+                <constraint firstAttribute="trailing" secondItem="KXn-L8-GyS" secondAttribute="trailing" id="xgp-tv-2bf"/>
+            </constraints>
+            <size key="customSize" width="399" height="125"/>
+            <connections>
+                <outlet property="ImageV" destination="KXn-L8-GyS" id="Dnc-LP-bqM"/>
+                <outlet property="titlelb" destination="kxf-XE-ztg" id="TjC-Mm-VYJ"/>
+            </connections>
+            <point key="canvasLocation" x="206.5" y="103.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="默认banner图" width="540" height="210"/>
+    </resources>
+</document>

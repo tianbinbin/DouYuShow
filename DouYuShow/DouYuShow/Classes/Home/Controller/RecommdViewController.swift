@@ -157,9 +157,14 @@ extension RecommdViewController{
 
     fileprivate func LoadData(){
        
-        //1. 请求推荐数据
         RecommedModel.requestData { [weak self] in
+            
+            //1. 请求推荐数据
             self?.collectionView.reloadData()
+            
+            //2. 将数据传递给GameView
+            self?.gameView.goups = self?.RecommedModel.anChorArr
+            
         }
         
         //2. 请求轮播数据

@@ -14,9 +14,32 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecommendGameView" customModule="DouYuShow" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" red="0.05795766846" green="1" blue="0.2772018846" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="BJ8-7r-pE6">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XaW-XT-W8f">
+                        <size key="itemSize" width="80" height="90"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="iN0-l3-epB" id="bOR-yn-iAt"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <constraints>
+                <constraint firstItem="BJ8-7r-pE6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="DEa-jA-qDy"/>
+                <constraint firstItem="BJ8-7r-pE6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="IoW-tU-bXF"/>
+                <constraint firstAttribute="bottom" secondItem="BJ8-7r-pE6" secondAttribute="bottom" id="jKM-Df-PlK"/>
+                <constraint firstAttribute="trailing" secondItem="BJ8-7r-pE6" secondAttribute="trailing" id="p8W-vt-OAr"/>
+            </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-156" y="-309.5"/>
+            <connections>
+                <outlet property="colletionView" destination="BJ8-7r-pE6" id="Rx5-Ar-yxW"/>
+            </connections>
+            <point key="canvasLocation" x="-156.5" y="-310"/>
         </view>
     </objects>
 </document>

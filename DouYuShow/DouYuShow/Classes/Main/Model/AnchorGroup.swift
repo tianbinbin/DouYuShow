@@ -28,6 +28,8 @@ class AnchorGroup: NSObject {
     }
     var tag_name : String = ""                                       // 改组显示的标题
     var icon_name : String = "home_column_phoneGame"                 // 该组显示的图标
+    var icon_url:String = ""
+    var game_name :String = ""
     lazy var anchModelArr: [AnchorModel] = [AnchorModel]()           // 存储每一个模型中数组中的模型
     
     // 重写构造函数

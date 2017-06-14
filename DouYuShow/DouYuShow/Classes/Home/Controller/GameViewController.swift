@@ -27,15 +27,21 @@ class GameViewController: UIViewController {
         let collectionView = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: layout)
         collectionView.register(UINib(nibName: "CollectionViewGameCell", bundle: nil), forCellWithReuseIdentifier: kGameCellID)
         collectionView.dataSource = self
+        collectionView.backgroundColor = UIColor.white
+        // collectionView 随着父视图的拉伸而拉伸
+        collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         return collectionView
     }()
     
+    fileprivate lazy var gameVM: GameViewModel = GameViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         SetUPUI()
         
+        //2. 请求数据
+        loadData()
     }
 }
 
@@ -51,15 +57,30 @@ extension GameViewController{
 extension GameViewController:UICollectionViewDataSource{
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 60
+        return gameVM.gameModel.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kGameCellID, for: indexPath) as! CollectionViewGameCell
         
-        cell.backgroundColor = UIColor.randomColor()
-
+        let ganmeModel = gameVM.gameModel[indexPath.row]
+        
+        cell.base = ganmeModel
+        
         return cell
+    }
+}
+
+// 请求数据
+extension GameViewController{
+
+   fileprivate func loadData(){
+    
+    gameVM.LoadallGameDat {
+        
+        self.collectionView.reloadData()
+    }
+    
     }
 }

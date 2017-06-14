@@ -16,12 +16,12 @@ class CollectionViewGameCell: UICollectionViewCell {
     @IBOutlet weak var iconimagev: UIImageView!          // 图片
     @IBOutlet weak var titlelb: UILabel!
     
-    var group : AnchorGroup?{
+    var base : BaseGameModel?{
     
         didSet{
         
-          titlelb.text = group?.tag_name ?? ""
-          iconimagev.kf.setImage(with: ImageResource.init(downloadURL: NSURL(string: group?.icon_url ?? "") as! URL))
+          titlelb.text = base?.tag_name ?? ""
+          iconimagev.kf.setImage(with: ImageResource.init(downloadURL: NSURL(string: base?.icon_url ?? "") as! URL))
         }
     }
     

@@ -11,6 +11,9 @@ private let kEdgeMargin:CGFloat = 10
 private let kItemW:CGFloat = (kSCREENW - 2 * kEdgeMargin)/3
 private let kItemH:CGFloat = kItemW*6/5
 private let kGameCellID = "kGameCellID"
+private let kHeadViewh:CGFloat = 50
+private let kHeadVieID = "CollectionHeaderReusableView"
+
 
 class GameViewController: UIViewController {
 
@@ -23,11 +26,14 @@ class GameViewController: UIViewController {
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         layout.sectionInset = UIEdgeInsets(top: 0, left: kEdgeMargin, bottom: 0, right: kEdgeMargin)
+        // 定义头的大小
+        layout.headerReferenceSize = CGSize(width: kSCREENW, height: kHeadViewh)
         
         let collectionView = UICollectionView(frame: (self?.view.bounds)!, collectionViewLayout: layout)
         collectionView.register(UINib(nibName: "CollectionViewGameCell", bundle: nil), forCellWithReuseIdentifier: kGameCellID)
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.white
+        collectionView.register(UINib(nibName: "CollectionHeaderReusableView", bundle: nil), forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: kHeadVieID)
         // collectionView 随着父视图的拉伸而拉伸
         collectionView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
         return collectionView
@@ -42,6 +48,9 @@ class GameViewController: UIViewController {
         
         //2. 请求数据
         loadData()
+        
+    
+
     }
 }
 
@@ -59,6 +68,16 @@ extension GameViewController:UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return gameVM.gameModel.count
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let headView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: kHeadVieID, for: indexPath) as! CollectionHeaderReusableView
+        headView.titlelabel.text = "全部"
+        headView.IconImageV.image = UIImage(named: "columnHotIcon")
+        headView.moreBtn.isHidden = true
+        return headView
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         

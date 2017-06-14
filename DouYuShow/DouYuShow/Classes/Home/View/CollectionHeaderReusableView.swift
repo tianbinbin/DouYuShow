@@ -14,6 +14,7 @@ class CollectionHeaderReusableView: UICollectionReusableView {
     
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var IconImageV: UIImageView!
+    @IBOutlet weak var moreBtn: UIButton!
     
     var group:AnchorGroup?{
     

@@ -57,10 +57,11 @@
                 <constraint firstAttribute="trailing" secondItem="XT6-Zl-9OF" secondAttribute="trailing" id="esG-0F-mZK"/>
                 <constraint firstItem="UJ0-8b-vJt" firstAttribute="top" secondItem="XT6-Zl-9OF" secondAttribute="bottom" constant="11" id="iVN-o6-MdU"/>
                 <constraint firstItem="XT6-Zl-9OF" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="kbj-H1-fbW"/>
-                <constraint firstItem="wzV-aZ-W9b" firstAttribute="leading" secondItem="yih-mR-0zU" secondAttribute="trailing" id="nYN-eP-0id"/>
+                <constraint firstItem="wzV-aZ-W9b" firstAttribute="leading" secondItem="yih-mR-0zU" secondAttribute="trailing" constant="10" id="nYN-eP-0id"/>
             </constraints>
             <connections>
                 <outlet property="IconImageV" destination="yih-mR-0zU" id="tY3-Im-UCK"/>
+                <outlet property="moreBtn" destination="UJ0-8b-vJt" id="P5S-qi-RHC"/>
                 <outlet property="titlelabel" destination="wzV-aZ-W9b" id="g7C-Sq-jkt"/>
             </connections>
             <point key="canvasLocation" x="-109" y="61"/>

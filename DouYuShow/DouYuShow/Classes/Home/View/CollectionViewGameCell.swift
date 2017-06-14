@@ -21,7 +21,7 @@ class CollectionViewGameCell: UICollectionViewCell {
         didSet{
         
           titlelb.text = group?.tag_name ?? ""
-          iconimagev.kf.setImage(with: ImageResource.init(downloadURL: NSURL(string: group?.icon_name ?? "") as! URL))
+          iconimagev.kf.setImage(with: ImageResource.init(downloadURL: NSURL(string: group?.icon_url ?? "") as! URL))
         }
     }
     

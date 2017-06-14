@@ -12,8 +12,6 @@ private let kItemW:CGFloat = (kSCREENW - 2 * kEdgeMargin)/3
 private let kItemH:CGFloat = kItemW*6/5
 private let kGameCellID = "kGameCellID"
 
-
-
 class GameViewController: UIViewController {
 
     // mark    懒加载属性
@@ -64,5 +62,4 @@ extension GameViewController:UICollectionViewDataSource{
 
         return cell
     }
-
 }

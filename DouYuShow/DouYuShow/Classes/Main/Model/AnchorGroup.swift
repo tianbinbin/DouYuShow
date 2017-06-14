@@ -65,5 +65,13 @@ class AnchorGroup: NSObject {
             }
         }
         
+        if key == "tag_name"{
+        
+            guard let anchModel = value as? [[String:Any]] else { return }
+    
+            
+        }
+        
+        
     }
 }

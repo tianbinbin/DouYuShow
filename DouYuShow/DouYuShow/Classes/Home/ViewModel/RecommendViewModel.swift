@@ -118,7 +118,10 @@ extension RecommendViewModel{
              for dict in dataArray{
                 
                  let group = AnchorGroup(dict:dict)
+                 group.tag_name = dict["tag_name"] as! String
+                 group.icon_url = dict["icon_url"] as! String
                  self.anChorArr.append(group)
+            
             }
             /*
             for model in self.anChorArr{
@@ -131,7 +134,7 @@ extension RecommendViewModel{
             */
             
             gcdgroup.leave()
-            print("第三部分请求完成")
+            print("第三部分请求完成---")
             
             }) { (reslut) in
                                         

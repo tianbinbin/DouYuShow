@@ -35,21 +35,20 @@ class HomeViewController: UIViewController {
         var childVCS = [UIViewController]()
         childVCS.append(RecommdViewController())
         childVCS.append(GameViewController())
+        childVCS.append(AmuseViewController())
         
-        for _ in 0..<2{
+        for _ in 0..<1{
         
             let vc = UIViewController()
             vc.view.backgroundColor = UIColor(r:CGFloat(arc4random_uniform(UInt32(255.0))), g: CGFloat(arc4random_uniform(UInt32(255.0))), b: CGFloat(arc4random_uniform(UInt32(255.0))))
             childVCS.append(vc)
         }
         
-        
         let pageContentView = PageContentView(frame: contentframe, childVCS: childVCS, parentViewController: self)
             pageContentView.delegate = self
     
         return pageContentView
     }()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

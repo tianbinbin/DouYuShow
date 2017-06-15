@@ -11,7 +11,6 @@ import UIKit
 class CollectionHeaderReusableView: UICollectionReusableView {
 
     // 控件属性
-    
     @IBOutlet weak var titlelabel: UILabel!
     @IBOutlet weak var IconImageV: UIImageView!
     @IBOutlet weak var moreBtn: UIButton!
@@ -22,9 +21,7 @@ class CollectionHeaderReusableView: UICollectionReusableView {
         
             titlelabel.text = group?.tag_name
             IconImageV.image = UIImage(named: group?.icon_name ?? "home_header_normal")
-            
         }
-    
     }
     
     override func awakeFromNib() {
@@ -32,4 +29,14 @@ class CollectionHeaderReusableView: UICollectionReusableView {
         // Initialization code
     }
     
+}
+
+
+// 创建一个类方法
+extension CollectionHeaderReusableView{
+
+    class func colltionHeadViewCustom()->CollectionHeaderReusableView{
+    
+        return  Bundle.main.loadNibNamed("CollectionHeaderReusableView", owner: nil, options: nil)?.first as! CollectionHeaderReusableView
+    }
 }

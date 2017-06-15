@@ -15,18 +15,10 @@ class RecommendGameView: UIView {
     // mark------ colltionView
     @IBOutlet weak var colletionView: UICollectionView!
     
-    var goups:[AnchorGroup]?{
+    var goups:[BaseGameModel]?{
     
         didSet{
-            
-            goups?.removeFirst()
-            goups?.removeFirst()
-            
-            // 添加更多组
-            let moregroup = AnchorGroup()
-            moregroup.tag_name = "更多"
-            goups?.append(moregroup)
-            
+        
             colletionView.reloadData()
         }
     }

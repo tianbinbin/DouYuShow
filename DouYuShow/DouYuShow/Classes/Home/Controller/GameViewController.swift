@@ -13,6 +13,7 @@ private let kItemH:CGFloat = kItemW*6/5
 private let kGameCellID = "kGameCellID"
 private let kHeadViewh:CGFloat = 50
 private let kHeadVieID = "CollectionHeaderReusableView"
+private let kGameViewH:CGFloat = 90
 
 
 class GameViewController: UIViewController {
@@ -41,6 +42,24 @@ class GameViewController: UIViewController {
     
     fileprivate lazy var gameVM: GameViewModel = GameViewModel()
     
+    fileprivate lazy var topHeadView:CollectionHeaderReusableView = {
+    
+        let topHeadView = CollectionHeaderReusableView.colltionHeadViewCustom()
+        topHeadView.frame = CGRect(x: 0, y: -kHeadViewh-kGameViewH, width: kSCREENW, height: kHeadViewh)
+        topHeadView.moreBtn.isHidden = true
+        topHeadView.titlelabel.text = "常用"
+        topHeadView.IconImageV.image = UIImage(named: "home_header_hot")
+        return topHeadView
+    }()
+    
+    fileprivate lazy var gameView:RecommendGameView = {
+        
+        let gameView = RecommendGameView.recommendGameView()
+        gameView.frame = CGRect(x: 0, y: -kGameViewH, width: kSCREENW, height: kGameViewH)
+        return gameView
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,9 +67,6 @@ class GameViewController: UIViewController {
         
         //2. 请求数据
         loadData()
-        
-    
-
     }
 }
 
@@ -60,6 +76,14 @@ extension GameViewController{
     
         //1. 添加 collectionView
         view.addSubview(collectionView)
+        
+        //2. 添加 topHeadView
+        collectionView.addSubview(topHeadView)
+        
+        //3. 添加常用gameview
+        collectionView.addSubview(gameView)
+        
+        collectionView.contentInset = UIEdgeInsets(top: kHeadViewh+kGameViewH, left: 0, bottom: 0, right: 0)
     }
 }
 
@@ -98,8 +122,23 @@ extension GameViewController{
     
     gameVM.LoadallGameDat {
         
+        //1.展示常用信息
         self.collectionView.reloadData()
+        
+        //2.展示常用游戏
+        /*
+        var tempaArray = [BaseGameModel]()
+        for i in 0..<10{
+            // 获取前十条数据
+            tempaArray.append(self.gameVM.gameModel[i])
+        }
+        
+        */
+        
+        // 同一个区间在一个数组中取出。然后转换成另外一个数组 Array(tempArr)
+        let tempArr = self.gameVM.gameModel[0..<10]
+        
+        self.gameView.goups = Array(tempArr)
     }
-    
     }
 }

@@ -163,7 +163,16 @@ extension RecommdViewController{
             self?.collectionView.reloadData()
             
             //2. 将数据传递给GameView
-            self?.gameView.goups = self?.RecommedModel.anChorArr
+
+            var groups:[AnchorGroup] = (self?.RecommedModel.anChorArr)!
+            groups.removeFirst()
+            groups.removeFirst()
+            
+            // 添加更多组
+            let moregroup = AnchorGroup()
+            moregroup.tag_name = "更多"
+            groups.append(moregroup)
+            self?.gameView.goups = groups
             
         }
         

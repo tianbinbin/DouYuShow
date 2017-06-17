@@ -156,6 +156,32 @@ extension RecommdViewController:UICollectionViewDataSource,UICollectionViewDeleg
             return CGSize(width: kItemW, height: kNormalItemH)
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let group = RecommedModel.anChorArr[indexPath.section]
+        let anchor = group.anchModelArr[indexPath.row]
+        
+        //1.判断是电脑直播还是手机直播
+        anchor.isVertical == 0 ? pushNomalRoomVC() : presentShowRoom()
+        
+    }
+    
+    private func presentShowRoom(){
+    
+        // 1. 创建控制器
+        let showRoom = RoomShowViewController()
+        present(showRoom, animated: true, completion: nil)
+        
+    }
+    
+    private func pushNomalRoomVC(){
+    
+        let roomNormal = RoomNormalViewController()
+        
+        navigationController?.pushViewController(roomNormal, animated: true)
+        
+    }
 }
 
 // mark: 请求数据、

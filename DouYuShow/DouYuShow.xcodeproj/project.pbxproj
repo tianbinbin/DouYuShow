@@ -52,6 +52,9 @@
 		37D112DD1EF4CCF7006B0402 /* FunnyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D112DC1EF4CCF7006B0402 /* FunnyViewController.swift */; };
 		37D112DF1EF4D07E006B0402 /* FunneyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D112DE1EF4D07E006B0402 /* FunneyViewModel.swift */; };
 		37D112E11EF4D6FB006B0402 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D112E01EF4D6FB006B0402 /* BaseViewController.swift */; };
+		37D112E81EF4E948006B0402 /* RoomShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D112E71EF4E948006B0402 /* RoomShowViewController.swift */; };
+		37D112EA1EF4EAA9006B0402 /* RoomNormalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D112E91EF4EAA9006B0402 /* RoomNormalViewController.swift */; };
+		37D112EC1EF4ECBD006B0402 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D112EB1EF4ECBD006B0402 /* CustomViewController.swift */; };
 		37DD7A4E1EE40B09007823FB /* NetWorkTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD7A4D1EE40B09007823FB /* NetWorkTools.swift */; };
 		37DD7A541EE43A8F007823FB /* NSDateExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD7A531EE43A8F007823FB /* NSDateExtention.swift */; };
 		37DD7A561EE44C6B007823FB /* AnchorGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DD7A551EE44C6B007823FB /* AnchorGroup.swift */; };
@@ -108,6 +111,9 @@
 		37D112DC1EF4CCF7006B0402 /* FunnyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunnyViewController.swift; sourceTree = "<group>"; };
 		37D112DE1EF4D07E006B0402 /* FunneyViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunneyViewModel.swift; sourceTree = "<group>"; };
 		37D112E01EF4D6FB006B0402 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		37D112E71EF4E948006B0402 /* RoomShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomShowViewController.swift; sourceTree = "<group>"; };
+		37D112E91EF4EAA9006B0402 /* RoomNormalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomNormalViewController.swift; sourceTree = "<group>"; };
+		37D112EB1EF4ECBD006B0402 /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		37DD7A4D1EE40B09007823FB /* NetWorkTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkTools.swift; sourceTree = "<group>"; };
 		37DD7A531EE43A8F007823FB /* NSDateExtention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtention.swift; sourceTree = "<group>"; };
 		37DD7A551EE44C6B007823FB /* AnchorGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorGroup.swift; sourceTree = "<group>"; };
@@ -172,6 +178,7 @@
 		379F77391EDD648A00DF2940 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				37D112E21EF4E920006B0402 /* Room */,
 				379F773A1EDD648A00DF2940 /* Flow */,
 				379F773B1EDD648A00DF2940 /* Home */,
 				379F773C1EDD648A00DF2940 /* Live */,
@@ -284,6 +291,7 @@
 				379F772B1EDD640D00DF2940 /* Main.storyboard */,
 				379F77501EDD740E00DF2940 /* MainViewController.swift */,
 				37D112E01EF4D6FB006B0402 /* BaseViewController.swift */,
+				37D112EB1EF4ECBD006B0402 /* CustomViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -320,6 +328,47 @@
 				37DD7A531EE43A8F007823FB /* NSDateExtention.swift */,
 			);
 			path = Extention;
+			sourceTree = "<group>";
+		};
+		37D112E21EF4E920006B0402 /* Room */ = {
+			isa = PBXGroup;
+			children = (
+				37D112E41EF4E920006B0402 /* Model */,
+				37D112E51EF4E920006B0402 /* View */,
+				37D112E61EF4E920006B0402 /* ViewModel */,
+				37D112E31EF4E920006B0402 /* Controller */,
+			);
+			path = Room;
+			sourceTree = "<group>";
+		};
+		37D112E31EF4E920006B0402 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				37D112E71EF4E948006B0402 /* RoomShowViewController.swift */,
+				37D112E91EF4EAA9006B0402 /* RoomNormalViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		37D112E41EF4E920006B0402 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		37D112E51EF4E920006B0402 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		37D112E61EF4E920006B0402 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		37DD7A501EE40F5E007823FB /* ViewModel */ = {
@@ -489,6 +538,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				37B92A591EF1819900C6935F /* GameModel.swift in Sources */,
+				37D112E81EF4E948006B0402 /* RoomShowViewController.swift in Sources */,
+				37D112EA1EF4EAA9006B0402 /* RoomNormalViewController.swift in Sources */,
 				37D112DA1EF4BE81006B0402 /* AmuseMenuCollectionViewCell.swift in Sources */,
 				379F77281EDD640D00DF2940 /* AppDelegate.swift in Sources */,
 				37D112DD1EF4CCF7006B0402 /* FunnyViewController.swift in Sources */,
@@ -509,6 +560,7 @@
 				37B92A571EF17FDB00C6935F /* GameViewModel.swift in Sources */,
 				378E036C1EF2D65E006DE9D9 /* AmuseViewController.swift in Sources */,
 				37D112DF1EF4D07E006B0402 /* FunneyViewModel.swift in Sources */,
+				37D112EC1EF4ECBD006B0402 /* CustomViewController.swift in Sources */,
 				37D112D51EF4B899006B0402 /* AmuseMenuView.swift in Sources */,
 				379F77581EDD7CD500DF2940 /* UIbBarButtonItemExtension.swift in Sources */,
 				3763C87A1EDDBB4000B2F553 /* UIColorExtenion.swift in Sources */,

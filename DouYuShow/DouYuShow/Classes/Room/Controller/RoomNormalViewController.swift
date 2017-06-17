@@ -15,9 +15,6 @@ class RoomNormalViewController: UIViewController,UIGestureRecognizerDelegate {
 
          view.backgroundColor = UIColor.gray
         
-       
-        
-
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,10 +31,12 @@ class RoomNormalViewController: UIViewController,UIGestureRecognizerDelegate {
         navigationController?.interactivePopGestureRecognizer?.isEnabled = true
     }
     
-    
     override func viewWillDisappear(_ animated: Bool) {
         
         // 隐藏导航栏 但必须还要手势
-        navigationController?.setNavigationBarHidden(false, animated: true)
+//        navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
+    
+    
 }

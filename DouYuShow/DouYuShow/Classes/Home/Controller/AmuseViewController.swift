@@ -16,10 +16,9 @@ private let kNormalCellID =  "kNormalCellID"
 private let kPretyCellID =  "kPretyCellID"
 private let kHeaderViewID = "kHeaderViewID"
 private let kHeaderViewH : CGFloat = 50
+private let kAmuseMenuViewH :CGFloat = 200
 
-
-
-class AmuseViewController: UIViewController {
+class AmuseViewController: BaseViewController {
 
     // colltionView
     fileprivate lazy var collectionView:UICollectionView = {[weak self] in
@@ -48,6 +47,14 @@ class AmuseViewController: UIViewController {
     // viewModel 
     fileprivate lazy var amuseVM:AmuseViewModel = AmuseViewModel()
     
+    // amusuMenuView
+    fileprivate lazy var amuseMenuView: AmuseMenuView = {
+    
+        let amuseMenuView = AmuseMenuView.AmuseMunuViewXib()
+        amuseMenuView.frame = CGRect(x: 0, y: -kAmuseMenuViewH, width: kSCREENW, height: kSCREENW)
+
+        return amuseMenuView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +64,8 @@ class AmuseViewController: UIViewController {
         
         // 2.请求数据
         loadData()
+        
+        
     }
 }
 
@@ -64,7 +73,15 @@ class AmuseViewController: UIViewController {
 extension AmuseViewController {
     fileprivate func setupUI(){
     
+        //1. 添加collectionView
         view.addSubview(collectionView)
+        
+        //2. 添加amuseMenuView
+        collectionView.addSubview(amuseMenuView)
+        
+        collectionView.contentInset = UIEdgeInsets(top: kAmuseMenuViewH, left: 0, bottom: 0, right: 0 )
+        
+        collectionView.isHidden = true
     }
 }
 
@@ -74,13 +91,12 @@ extension AmuseViewController{
     fileprivate func loadData(){
     
         amuseVM.loadAmuseData { 
-            
+            self.collectionView.isHidden = false
             self.collectionView.reloadData()
+            self.amuseMenuView.groups = self.amuseVM.anchorGroups
         }
-    
     }
 }
-
 
 // mark: 遵循collectionView datasourece
 extension AmuseViewController:UICollectionViewDataSource,UICollectionViewDelegate{
@@ -115,8 +131,4 @@ extension AmuseViewController:UICollectionViewDataSource,UICollectionViewDelegat
         
         return headview
     }
-    
-
-    
-
 }

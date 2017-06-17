@@ -8,17 +8,17 @@
 
 import UIKit
 
-class GameViewModel {
+class GameViewModel:BaseViewModel {
     
 
     lazy var gameModel:[GameModel] = [GameModel]()
 
 }
 
-
 extension GameViewModel{
 
     func LoadallGameDat(finisuhedCallBack:@escaping ()->()){
+        
         
         NetWorkTools.RequestData(type: .GET, URLString: "http://capi.douyucdn.cn/api/v1/getColumnDetail", parameters: ["shortName":"game"], SuccessCallBack: { (reslut) in
             
@@ -26,7 +26,6 @@ extension GameViewModel{
             guard let reslutDic = reslut as? [String:Any] else{return}
             
             guard let dataArray = reslutDic["data"] as? [[String:Any]] else {return}
-            
             
             for dic in dataArray{
             
@@ -40,9 +39,10 @@ extension GameViewModel{
         }) { (fail) in
             
         }
+ 
         
+        //loadAnchorData(urlStr: "http://capi.douyucdn.cn/api/v1/getColumnDetail", parameters: ["shortName":"game"], finishedCallBack: finisuhedCallBack)
 
-        
     }
     
 }

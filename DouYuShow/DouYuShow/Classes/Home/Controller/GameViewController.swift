@@ -16,7 +16,7 @@ private let kHeadVieID = "CollectionHeaderReusableView"
 private let kGameViewH:CGFloat = 90
 
 
-class GameViewController: UIViewController {
+class GameViewController: BaseViewController {
 
     // mark    懒加载属性
     fileprivate lazy var collectionView:UICollectionView = { [weak self] in
@@ -63,17 +63,22 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        SetUPUI()
+        SetupUI()
         
         //2. 请求数据
         loadData()
+        
+        
     }
 }
 
 extension GameViewController{
 
-    fileprivate func SetUPUI(){
+    override func SetupUI(){
+        
+        super.SetupUI()
     
+
         //1. 添加 collectionView
         view.addSubview(collectionView)
         
@@ -84,6 +89,8 @@ extension GameViewController{
         collectionView.addSubview(gameView)
         
         collectionView.contentInset = UIEdgeInsets(top: kHeadViewh+kGameViewH, left: 0, bottom: 0, right: 0)
+        
+        collectionView.isHidden = true
     }
 }
 
@@ -121,7 +128,7 @@ extension GameViewController{
    fileprivate func loadData(){
     
     gameVM.LoadallGameDat {
-        
+        self.collectionView.isHidden = false
         //1.展示常用信息
         self.collectionView.reloadData()
         

@@ -20,7 +20,7 @@ private let kCycleViewH = kSCREENW * 3/8
 private let kGameViewH = CGFloat(90.0)
 
 
-class RecommdViewController: UIViewController {
+class RecommdViewController: BaseViewController {
 
     // mark:懒加载
     fileprivate lazy var collectionView:UICollectionView = {[weak self] in
@@ -68,10 +68,12 @@ class RecommdViewController: UIViewController {
         super.viewDidLoad()
 
         // 设置ui
-        setUpUI()
+        SetupUI()
         
         // 请求数据
         LoadData()
+        
+     
     }
 }
 
@@ -79,9 +81,13 @@ class RecommdViewController: UIViewController {
 // mark：设置UI
 extension RecommdViewController{
 
-    fileprivate func setUpUI(){
+    override func SetupUI(){
     
+        super.SetupUI()
+        
         view.addSubview(collectionView)
+        
+        collectionView.isHidden = true
         
         //2. 将 RecommendCycleView 添加到collectionview
         collectionView.addSubview(cycleView)
@@ -159,6 +165,7 @@ extension RecommdViewController{
        
         RecommedModel.requestData { [weak self] in
             
+            self?.collectionView.isHidden = false
             //1. 请求推荐数据
             self?.collectionView.reloadData()
             

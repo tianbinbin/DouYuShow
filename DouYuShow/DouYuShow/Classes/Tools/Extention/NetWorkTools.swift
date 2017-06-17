@@ -20,7 +20,7 @@ enum MethodType{
 
 class NetWorkTools {
 
-    class func RequestData(type:MethodType,URLString:String,parameters:[String:NSString]? = nil,SuccessCallBack:@escaping(_ Success:AnyObject)->(),FalseCallBack:@escaping (_ false:AnyObject)->()){
+    class func RequestData(type:MethodType,URLString:String,parameters:[String:Any]? = nil,SuccessCallBack:@escaping(_ Success:AnyObject)->(),FalseCallBack:@escaping (_ false:AnyObject)->()){
     
         //1. 获取类型
         let method = type == .GET ? HTTPMethod.get: HTTPMethod.post
